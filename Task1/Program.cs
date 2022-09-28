@@ -1,2 +1,42 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// **Задача 55:** Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы.
+//  В случае, если это невозможно, программа должна вывести сообщение для пользователя.
+
+// Например, задан массив:
+
+// 1 4 7 2
+
+// 5 9 2 3
+
+// 8 4 2 4
+
+// 5 2 6 7
+
+// В итоге получается вот такой массив:
+
+// 1 5 8 5
+
+// 4 9 4 2
+
+// 7 2 2 6
+
+// 2 3 4 7
+
+
+
+int[,] transponeArray(int[,] arr) //Метод заменяет строки на столбцы в двумерном массиве
+{
+int rows = arr.GetLength(0);
+int columns = arr.GetLength(1);
+
+int[,] result = new int[columns, rows];
+
+for (int i = 0; i < rows; i++)
+{
+for (int j = 0; j < columns; j++)
+{
+result[j, i] = arr[i, j];
+}
+}
+
+return result;
+}
